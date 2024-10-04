@@ -16,11 +16,11 @@ class Calculator {
         return a * b;
     }
 
-    public double divide(double a, double b) throws ArithmeticException {
+    public String divide(double a, double b)  {
         if (b == 0) {
-            throw new ArithmeticException("Деление на ноль невозможно.");
+            return "Ошибка: Деление на ноль невозможно.";
         }
-        return a / b;
+        return String.valueOf(a / b);
     }
 }
 
@@ -50,26 +50,24 @@ public class Task3 {
             }
             double num2;
             num2 = Double.parseDouble(input2);
-            try {
-                double result = 0;
-                switch (operator) {
-                    case "+":
-                        result = calculator.add(num1, num2);
-                        break;
-                    case "-":
-                        result = calculator.subtract(num1, num2);
-                        break;
-                    case "*":
-                        result = calculator.multiply(num1, num2);
-                        break;
-                    case "/":
-                        result = calculator.divide(num1, num2);
-                        break;
-                }
-                System.out.println("Результат: " + result);
-            } catch (ArithmeticException e) {
-                System.out.println("Ошибка: " + e.getMessage());
+            String result = "";
+            switch (operator) {
+                case "+":
+                    result = String.valueOf(calculator.add(num1, num2));
+                    break;
+                case "-":
+                    result = String.valueOf(calculator.subtract(num1, num2));
+                    break;
+                case "*":
+                    result = String.valueOf(calculator.multiply(num1, num2));
+                    break;
+                case "/":
+                    result = calculator.divide(num1, num2);
+                    break;
+                default:
+                    result = "Неверный оператор!";
             }
+            System.out.println("Результат: " + result);
         }
         scanner.close();
     }
