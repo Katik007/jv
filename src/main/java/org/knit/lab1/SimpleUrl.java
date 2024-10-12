@@ -1,5 +1,7 @@
 package org.knit.lab1;
 
+import java.net.URL;
+
 /***
  * Задача 2
  * Создайте класс SimpleUrl
@@ -34,7 +36,7 @@ public class SimpleUrl {
 
     private void parseUrl(String url) {
         try {
-            java.net.URL parsedUrl = new java.net.URL(url);
+            URL parsedUrl = new URL(url);
             this.protocol = parsedUrl.getProtocol();
             String host = parsedUrl.getHost();
             this.address = host;
