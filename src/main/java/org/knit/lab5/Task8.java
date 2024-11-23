@@ -16,7 +16,7 @@ public class Task8 {
         }
 
         // Сортировка по имени
-        Arrays.sort(items, Comparator.comparing(ShopItem::getName));
+        Arrays.sort(items, Comparator.comparing(ShopItem::getName).thenComparing(ShopItem::getPrice));
         System.out.println("Отсортированные ShopItem:");
         for (ShopItem item : items) {
             System.out.println(item);
@@ -26,6 +26,7 @@ public class Task8 {
         for (ShopItem item : items) {
             itemCounts.put(item, itemCounts.getOrDefault(item, 0) + 1);
         }
+
 
         System.out.println("\nКоличество одинаковых ShopItem:");
         for (Map.Entry<ShopItem, Integer> entry : itemCounts.entrySet()) {
