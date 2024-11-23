@@ -15,16 +15,11 @@ public class Task7 {
         while (scanner.hasNextLine()) {
             wordsList.add(scanner.nextLine().toLowerCase()); // Приводим к нижнему регистру
             }
-
         // Преобразуем список в массив
         String[] words = wordsList.toArray(new String[0]);
-
         char[] alphabet = "абвгдежзийклмнопрстуфхцчшщъыьэюя".toCharArray();
-
         DictionaryStatistic stats = new DictionaryStatistic(words, alphabet);
-
         stats.printStatistics();
-
         System.out.println("\nЧастота букв в словаре:");
         stats.printSymbolsStat();
 

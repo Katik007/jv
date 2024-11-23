@@ -75,7 +75,6 @@ class DictionaryStatistic {
         }
     }
 
-    // Выводит общую статистику
     public void printStatistics() {
         System.out.println("Количество слов в словаре: " + dictionarySize);
         System.out.println("Количество палиндромов: " + polindrom);
