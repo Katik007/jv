@@ -18,8 +18,6 @@ public class Hangman {
 
         Random random = new Random();
         String wordToGuess = dictionary.get(random.nextInt(dictionary.size()));
-
-        // Инициализация переменных игры
         List<Character> guessedWord = new ArrayList<>(Collections.nCopies(wordToGuess.length(), '_'));
         Set<Character> guessedLetters = new HashSet<>();
         int attemptsLeft = 6;
@@ -27,22 +25,17 @@ public class Hangman {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Добро пожаловать в игру 'Виселица'!");
 
-        // Основной игровой цикл
         while (attemptsLeft > 0) {
-            // Печать текущего состояния слова
             System.out.println("\nЗагаданное слово: " + getWordDisplay(guessedWord));
             System.out.print("Введите букву: ");
             char letter = scanner.next().toLowerCase().charAt(0);
 
-            // Проверка на повторный ввод буквы
             if (guessedLetters.contains(letter)) {
                 System.out.println("Вы уже вводили эту букву. Попробуйте другую.");
                 continue;
             }
 
             guessedLetters.add(letter);
-
-            // Проверка наличия буквы в слове
             if (wordToGuess.indexOf(letter) != -1) {
                 System.out.println("Верно!");
                 for (int i = 0; i < wordToGuess.length(); i++) {
@@ -55,14 +48,12 @@ public class Hangman {
                 System.out.println("Неверно! Осталось попыток: " + attemptsLeft);
             }
 
-            // Проверка на победу
             if (!guessedWord.contains('_')) {
                 System.out.println("\nПоздравляем! Вы угадали слово: " + wordToGuess);
                 return;
             }
         }
 
-        // Если попытки закончились, выводим сообщение о поражении
         System.out.println("\nВы проиграли! Загаданное слово было: " + wordToGuess);
     }
 
