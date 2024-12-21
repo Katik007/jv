@@ -14,7 +14,7 @@ public class Main {
         while (true) {
             System.out.print("Введите команду: ");
             String input = scanner.nextLine();
-            String[] parts = input.split(" ", 3);
+            String[] parts = input.split(" ", 4);
 
             switch (parts[0]) {
                 case "add":

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:sqlite:C:\\Users\\User\\GitHub\\jv\\mydb";
+    private static final String URL = "jdbc:sqlite:C:\\Users\\User\\GitHub\\jv\\src\\main\\java\\org\\knit\\lab11\\Kok";
 //    private static final String USER = "your_user";
 //    private static final String PASSWORD = "your_password";
     private static Connection connection;
